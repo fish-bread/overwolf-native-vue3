@@ -1,4 +1,4 @@
-# 简单的overwolf_native_vue3构建
+# 简单的overwolf_native_vue3构建,还未加入overwolf相关api
 
 ## 通过修改vue路径为相对路径
 在vite.config.js中设置base路径为`./`，确保所有资源使用相对路径：
