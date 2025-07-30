@@ -10,7 +10,6 @@ const showModal = ref(false)
 const header = useTemplateRef("header")
 onMounted(() => {
   if (header.value) setDrag(header.value)
-  console.log('pinia',backgroundStore)
 })
 // 显示关闭确认模态框
 function onCloseClicked() {
