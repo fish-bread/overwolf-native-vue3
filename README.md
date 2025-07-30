@@ -28,7 +28,7 @@ npm run build
   build: {
     rollupOptions: {
       input: {
-        background: 'windows/background.html',
+        background: 'windows/background.html'(在background窗体控制台能看到大多数程序运行的结果),
         desktop: 'windows/desktop.html',
         inGame: 'windows/in-game.html'
       }
