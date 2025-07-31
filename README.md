@@ -3,7 +3,7 @@
 本项目基于原作者 Ben-Guthrie 的 TypeScript 项目 [overwolf-vue3-sample-app](https://github.com/Ben-Guthrie/overwolf-vue3-sample-app) 转换为 JavaScript 版本，旨在为不想使用 TypeScript 的开发者提供参考。
 本人菜鸡一枚，仅会转化 TypeScript 为 JavaScript，导致本项目极其简陋。如需查看完整项目，还请前往 [Ben-Guthrie 的仓库](https://github.com/Ben-Guthrie/overwolf-vue3-sample-app)。
 
-本项目实现了有关于生成桌面窗体,后台窗体,游戏内覆盖窗体的功能,自动判断启动游戏是否为炉石传说,并实现了在炉石传说游戏内查看版本号的功能
+本项目实现了有关于生成桌面窗体,后台窗体,游戏内覆盖窗体的功能,自动判断启动游戏是否为炉石传说,并实现了在炉石传说游戏内查看版本号的功能,当然,您也可以修改游戏代码及事件来启动不同的游戏
 
 该演示应用展示了如何为不同的应用窗口配置多个入口点，避免需要多个单独的项目，并使用在应用窗口之间共享的存储。
 
