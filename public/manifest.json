@@ -1,0 +1,131 @@
+{
+  // 清单文件版本
+  "manifest_version": 1,
+  // 应用类型（Web应用）
+  "type": "WebApp",
+
+  // 应用元数据
+  "meta": {
+    "name": "Sample Vue App",                  // 应用名称
+    "version": "1.1.0",                        // 版本号
+    "minimum-overwolf-version": "0.160.0",     // 最低支持的Overwolf版本
+    "author": "Overwolf",                      // 开发者
+    "description": "An example app for developers new to Overwolf",  // 描述
+    "dock_button_title": "Sample - Vue",        // 任务栏按钮标题
+    "icon": "icons/IconMouseOver.png",         // 图标（悬停状态）
+    "icon_gray": "icons/IconMouseNormal.png",   // 图标（默认状态）
+    "launcher_icon": "icons/desktop-icon.ico", // 桌面快捷方式图标
+    "window_icon": "icons/IconMouseOver.png"   // 窗口图标
+  },
+
+  // 权限配置
+  "permissions": ["Hotkeys", "GameInfo"],      // 需要的权限（热键和游戏信息）
+
+  // 核心配置数据
+  "data": {
+    "start_window": "background",              // 启动时打开的窗口
+
+    // 热键配置
+    "hotkeys": {
+      "app_showhide": {
+        "title": "Show/Hide In-Game Window",   // 热键描述
+        "action-type": "toggle",               // 切换动作
+        "default": "Ctrl+F"                    // 默认快捷键
+      }
+    },
+
+    // 协议覆盖配置
+    "protocol_override_domains": {
+      "googlesyndication": "http"              // 强制使用http协议
+    },
+
+    // 允许外部连接的域名
+    "externally_connectable": {
+      "matches": [
+        "http://*.overwolf.com",
+        "https://*.overwolf.com",
+        "https://*.google-analytics.com",
+        "http://*.google-analytics.com",
+        "https://www.googleapis.com"
+      ]
+    },
+
+    "force_browser": "user",                   // 强制使用用户默认浏览器
+
+    // 窗口配置
+    "windows": {
+      "background": {                          // 后台窗口
+        "file": "windows/background.html",      // HTML文件路径
+        "background_optimization": true,        // 启用后台优化
+        "is_background_page": true             // 是后台页面
+      },
+      "desktop": {                             // 桌面窗口
+        "file": "windows/desktop.html",
+        "desktop_only": true,                  // 仅限桌面模式
+        "native_window": true,                 // 使用原生窗口
+        "use_os_windowing": true,// 是否使用操作系统原生窗口管理
+        "resizable": true,                     // 可调整大小
+        "transparent": false,                   // 透明背景
+        "override_on_update": true,            // 更新时覆盖
+        "size": {                              // 默认尺寸
+          "width": 1212,
+          "height": 699
+        },
+        "min_size": {                          // 最小尺寸
+          "width": 1212,
+          "height": 699
+        }
+      },
+      "in_game": {                             // 游戏内窗口
+        "file": "windows/in-game.html",
+        "in_game_only": true,                  // 仅限游戏内
+        "focus_game_takeover": "ReleaseOnHidden",  // 焦点控制方式
+        "focus_game_takeover_release_hotkey": "app_showhide",  // 释放焦点的热键
+        "resizable": true, // 可调整大小
+        "transparent": true, // 透明背景
+        "override_on_update": true,// 更新时覆盖
+        "size": {
+          "width": 1212,
+          "height": 699
+        },
+        "min_size": {
+          "width": 1212,
+          "height": 699
+        }
+      }
+    },
+
+    // 目标游戏配置
+    "game_targeting": {
+      "type": "dedicated",                     // 专用类型
+      "game_ids": [                            // 支持的游戏ID列表
+        9898
+      ]
+    },
+
+    // 游戏事件监听
+    "game_events": [                           // 监听游戏事件
+      9898
+    ],
+
+    // 启动事件配置
+    "launch_events": [
+      {
+        "event": "GameLaunch",                 // 游戏启动事件
+        "event_data": {
+          "game_ids": [                        // 触发事件的目标游戏
+            9898
+          ]
+        },
+        "start_minimized": true                // 启动时最小化
+      }
+    ],
+
+    // 开发者选项
+    "developer": {
+      "enable_auto_refresh": true,             // 启用自动刷新
+      "reload_delay": 1000,                    // 刷新延迟(毫秒)
+      "filter": "*.*"                          // 文件监视过滤器
+    }
+  }
+}
